@@ -11,7 +11,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "node functions/index.js",
+    "start": "node clase-3/app.js",
     "build": "netlify deploy --prod",
     "dev:1": "nodemon clase-2/1.http.js",
     "dev:2": "nodemon clase-2/2.routing.js",
@@ -22,7 +22,6 @@
     "cors": "2.8.5",
     "express": "5.1.0",
     "picocolors": "1.1.1",
-    "serverless": "^4.17.0",
     "zod": "3.25.49"
   },
   "devDependencies": {

@@ -15,7 +15,7 @@ Crear un archivo "api.http" y agregar los endpoints (METHOD URL)
 
 `Ejemplo:` GET http://localhost:3000/pokemon/ditto
 
-# Espress
+# Express
 Instalar express modo exacto (-E) sin caret (^) -> package.json: para que la dependencia no se actualice cuando sale una nueva version
 ```
 npm i express -E
@@ -35,5 +35,5 @@ https://app.netlify.com/
 3. Crear un archivo netlify.toml  
 ```
 [build]
-  functions = "clase-3"
+  functions = "functions"
 ```
