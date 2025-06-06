@@ -139,7 +139,11 @@ app.options('/movies/:id', (req, res) => {
   res.send()
 }) */
 
-const PORT = process.env.PORT || 3000
+/* const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`)
-})
+}) */
+
+// Netlify
+const router = express.Router()
+app.use('.netlify/clase-3/app', router)

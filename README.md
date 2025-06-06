@@ -25,3 +25,15 @@ npm i express -E
 ```
 npm i zod -E
 ```
+
+# Despligue en netlify
+https://app.netlify.com/
+
+1. npm i -g netlify-cli
+2. npm i serverless
+
+3. Crear un archivo netlify.toml  
+```
+[build]
+  functions = "clase-3"
+```
