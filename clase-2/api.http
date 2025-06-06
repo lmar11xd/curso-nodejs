@@ -1,0 +1,15 @@
+### Home
+GET http://localhost:3000/
+
+### Recuperar información de un Pokémon ditto
+GET http://localhost:3000/pokemon/ditto
+
+### Crear un Pokemon
+POST http://localhost:3000/pokemon
+Content-Type: application/json
+
+{
+  "name": "ditto",
+  "type": "normal",
+  "level": 10
+}
