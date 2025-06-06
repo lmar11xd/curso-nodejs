@@ -1,10 +1,9 @@
 const express = require('express') // require -> CommonJS
 const crypto = require('node:crypto') // Importing crypto module for generating unique IDs
-const movies = require('./movies.json') // Importing movies data from JSON file
+const movies = require('../clase-3/movies.json') // Importing movies data from JSON file
 const cors = require('cors') // Importing CORS middleware
-const serverless = require('serverless-http') // Importing serverless-http for compatibility with Netlify
 
-const { validateMovie, validatePartialMovie } = require('./scheme/movie')
+const { validateMovie, validatePartialMovie } = require('../clase-3/scheme/movie')
 
 const app = express() // Express application
 app.disable('x-powered-by') // Disable 'x-powered-by' header
@@ -147,5 +146,4 @@ app.listen(PORT, () => {
 
 // Netlify
 const router = express.Router()
-app.use('.netlify/clase-3/app', router)
-export const handler = serverless(app)
+app.use('.netlify/functions/index', router)
