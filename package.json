@@ -12,7 +12,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node clase-3/app.js",
-    "build": "netlify deploy --prod",
     "dev:1": "nodemon clase-2/1.http.js",
     "dev:2": "nodemon clase-2/2.routing.js",
     "dev:3": "node --watch clase-2/3.express.js",

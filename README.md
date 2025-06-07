@@ -34,6 +34,13 @@ https://app.netlify.com/
 
 3. Crear un archivo netlify.toml  
 ```
-[build]
-  functions = "functions"
+[functions]
+external_node_modules = ["express"]
+node_bundler = "esbuild"
+
+[[redirects]]
+from = "/api/*"
+to = "/.netlify/functions/api/:splat"
+status = 200
+force = true
 ```
