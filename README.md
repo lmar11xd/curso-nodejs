@@ -21,6 +21,11 @@ Instalar express modo exacto (-E) sin caret (^) -> package.json: para que la dep
 npm i express -E
 ```
 
+# ESLint
+```
+npm i standard -D
+```
+
 # Validaciones
 ```
 npm i zod -E
