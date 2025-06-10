@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3 - Web</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header, footer {
+        background-color: #f8f9fa;
+        padding: 1rem;
+        text-align: center;
+      }
+      main {
+        padding: 2rem;
+      }
+      article {
+        border: 1px solid #ddd;
+        margin-bottom: 1rem;
+        padding: 1rem;
+      }
+      img {
+        height: auto;
+        width: 320px;
+        max-width: 100%;
+      }
+    </style>
+
+    <script type="module">
+      fetch('http://localhost:3000/movies')
+        .then(response => response.json())
+        .then(movies => {
+           const html = movies.map(movie => `
+              <article data-id="${movie.id}">
+                <h3>${movie.title}</h3>
+                <img src="${movie.poster}" alt="${movie.title}">
+                <p>${movie.year}</p>
+
+                <button>Eliminar</button>
+              </article>
+            `).join('');
+
+            document.querySelector('main').innerHTML = html;
+            document.addEventListener('click', (event) => {
+              if (event.target.tagName === 'BUTTON') {
+                const article = event.target.closest('article');
+                const id = article.getAttribute('data-id');
+                fetch(`http://localhost:3000/movies/${id}`, {
+                  method: 'DELETE'
+                })
+                .then(() => {
+                  article.remove();
+                });
+              }
+            });
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Clase 3 - Web</h1>
+    </header>
+    <main>
+    </main>
+    <footer>
+        <p>&copy; 2023 Clase 3 - Web</p>
+    </footer>
+  </body>
+</html>
